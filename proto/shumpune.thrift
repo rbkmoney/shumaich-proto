@@ -126,8 +126,8 @@ exception PlanNotFound {
 exception InvalidPostingParams {
     1: required map<Posting, string> wrong_postings
 }
+
 exception ClockInFuture {}
-//exception
 
 service Accounter {
     Clock Hold(1: PostingPlanChange plan_change) throws (1: InvalidPostingParams e1, 2: base.InvalidRequest e2)
